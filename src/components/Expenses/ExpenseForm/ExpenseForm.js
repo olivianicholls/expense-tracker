@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 
 import './ExpenseForm.css';
 
@@ -34,6 +33,8 @@ const ExpenseForm = (props) => {
       amount: enteredAmount,
       date: new Date(enteredDate),
     }
+
+    props.onSaveExpenseData(expenseData)
 
     clearInputs();
   }
