@@ -1,30 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import './ExpensesList.css';
 
-import Card from "../../UI/Card/Card";
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
-import ExpenseFilter from "../ExpensesFilter/ExpensesFilter";
 
 const ExpensesList = (props) => {
-  useState();
 
-  const [filteredYear, setFilteredYear] = useState('2020')
-
-  const filterYearHandler = (year) => {
-    setFilteredYear(year)
+  if (props.items.length === 0) {
+    return <h2 className="c-expenses-list__fallback">No items found.</h2>
   }
 
   return (
-    <Card className="c-expenses">
-      <ExpenseFilter selected={filteredYear} onFilterYear={filterYearHandler}></ExpenseFilter>
+    <ul className='c-expenses-list'>
       {props.items.map(item => 
       <ExpenseItem
+        key={item.id}
         title={item.title}
         date={item.date}
         amount={item.amount}
       />)}
-    </Card>
+    </ul>
   );
 }
 

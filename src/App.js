@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import ExpensesList from "./components/Expenses/ExpensesList/ExpensesList";
+
+import Expenses from "./components/Expenses/Expenses/Expenses";
 import NewExpense from "./components/Expenses/NewExpense/NewExpense";
 
 const initialExpenses = [
@@ -12,13 +13,13 @@ const initialExpenses = [
   {
     id: 'e2',
     title: 'Item 2',
-    date: new Date(2021, 2, 28),
+    date: new Date(2022, 2, 28),
     amount : '123'
   },
   {
     id: 'e3',
     title: 'Item 3',
-    date: new Date(2021, 9, 28),
+    date: new Date(2019, 9, 28),
     amount : '8000'
   }
 ];
@@ -40,7 +41,7 @@ const App = () => {
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
-      <ExpensesList items={expenses}></ExpensesList>
+      <Expenses items={expenses}></Expenses>
     </div>
   );
 }
