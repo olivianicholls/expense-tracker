@@ -1,0 +1,9 @@
+.c-expenses-list {
+  list-style: none;
+  padding: 0;
+}
+
+.c-expenses-list__fallback {
+  color: white;
+  text-align: center;
+}
